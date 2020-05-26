@@ -49,7 +49,7 @@ static int	numchar(char const *str, char c, int i)
 	return (len);
 }
 
-static char	**free2(char const **dst, int j)
+static char	**o4istka(char const **dst, int j)
 {
 	while (j > 0)
 	{
@@ -60,7 +60,7 @@ static char	**free2(char const **dst, int j)
 	return (NULL);
 }
 
-static char	**affect(char const *s, char **dst, char c, int l)
+static char	**filling(char const *s, char **dst, char c, int l)
 {
 	int	i;
 	int	j;
@@ -75,7 +75,7 @@ static char	**affect(char const *s, char **dst, char c, int l)
 			i++;
 		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
 		if (dst[j] == NULL)
-			return (free2((char const **)dst, j));
+			return (o4istka((char const **)dst, j));
 		while (s[i] != '\0' && s[i] != c)
 			dst[j][k++] = s[i++];
 		dst[j][k] = '\0';
@@ -96,5 +96,5 @@ char		**ft_split(char const *s, char c)
 	dst = (char **)malloc(sizeof(char *) * (l + 1));
 	if (dst == NULL)
 		return (NULL);
-	return (affect(s, dst, c, l));
+	return (filling(s, dst, c, l));
 }
