@@ -81,7 +81,7 @@ static char	**filling(char const *s, char **dst, char c, int l)
 		dst[j][k] = '\0';
 		j++;
 	}
-	dst[j] = 0;
+	dst[j] = NULL;
 	return (dst);
 }
 
