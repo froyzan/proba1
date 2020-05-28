@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static char		*ft_sttrcpy(char *dest, const char *src, size_t i, size_t n)
 {
@@ -33,6 +33,8 @@ char			*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
 	if ((stroka = ((char*)malloc(sizeof(char) * len + 1))))
 	{
 		stroka = ft_sttrcpy(stroka, s, start, len);

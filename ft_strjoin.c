@@ -62,7 +62,8 @@ char			*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	if (s1 != NULL || s2 != NULL)
 	{
-		stroka = (char*)malloc(sizeof(char) * (ft_dlina(s1, s2)) + 1);
+		if (!(stroka = (char*)malloc(sizeof(char) * (ft_dlina(s1, s2)) + 1)))
+			return (NULL);
 		ft_vstavka(s1, s2, stroka);
 	}
 	return (stroka);
