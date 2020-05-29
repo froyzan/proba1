@@ -18,7 +18,7 @@ int	ft_atoi(const char *nptr)
 
 	number = 0;
 	sign = 1;
-	i = 0;
+	i = 1;
 	while (*nptr != '\0' && ((*nptr >= 9 && *nptr <= 13) || *nptr == 32))
 		nptr++;
 	if (*nptr == '-')
@@ -27,8 +27,7 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	while (*nptr != '\0' && (*nptr >= '0' && *nptr <= '9'))
 	{
-		i++;
-		if (number != 0 && i > 10)
+		if (number != 0 && i++ > 10)
 		{
 			if (sign == -1)
 				return (0);
