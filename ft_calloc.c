@@ -20,9 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	if (!(massiv = malloc(nmemb * size)))
 		return (NULL);
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	while (i < nmemb)
+	while (i < nmemb * size)
 	{
 		((char *)massiv)[i] = 0;
 		i++;
