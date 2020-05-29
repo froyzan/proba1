@@ -6,7 +6,7 @@
 /*   By: psafflow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 15:31:55 by psafflow          #+#    #+#             */
-/*   Updated: 2020/05/14 18:09:24 by psafflow         ###   ########.fr       */
+/*   Updated: 2020/05/29 16:09:24 by psafflow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char			str[n];
-	size_t			i;
-	size_t			j;
 	unsigned char	*pdest;
 	unsigned char	*psrc;
 
-	i = 0;
-	j = 0;
 	pdest = (unsigned char*)dest;
 	psrc = (unsigned char*)src;
-	while (i < n)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (psrc > pdest)
 	{
-		str[i] = psrc[i];
-		i++;
+		while (n--)
+			*pdest++ = *psrc++;
 	}
-	while (j < n)
+	else
 	{
-		pdest[j] = str[j];
-		j++;
+		while (n--)
+			pdest[n] = psrc[n];
 	}
 	return (dest);
 }
